@@ -1,0 +1,26 @@
+#This program is to change file extension of multiple files
+import os
+#Change file extension using listdir() function
+source_path = 'old_folder location_path'
+def list_dir(path):
+    arr = os.listdir(path)
+    print(arr)
+    for c in arr:
+        print(c)
+        give = c.split('.')
+        print(give[-1:])
+        take = "png"
+        gave = str(give[-1])
+        print(gave,take)
+        if gave == take:
+            print("yes")
+            n = str(r'\\') + str(give[0])
+            older_path = str(r'old_folder location_path') + str(n) + str(".png")
+            newer_path = str(r'new_folder location_path') + str(n) + str(".jpg")
+            os.rename(older_path,newer_path)
+            print(c, older_path ,newer_path)
+        else:
+            print("No")
+
+print("The list of files in the source path are:\n")
+list_dir(source_path)
